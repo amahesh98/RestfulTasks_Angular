@@ -70,7 +70,7 @@ export class AppComponent implements OnInit{
     let taskObservable = this._httpService.editTask(_id, this.taskData)
     taskObservable.subscribe(data=>{
       console.log("Received response: ", data)
-      if(data.success==1){
+      if(data['success']==1){
         this.showEdit=false
         this.getAllTasks()
         this.taskData={name:'', description:'', completed:false, task_id:''}
@@ -83,10 +83,10 @@ export class AppComponent implements OnInit{
     let taskObservable=this._httpService.getSingleTask(_id)
     taskObservable.subscribe(data=>{
       console.log("Recieved data", data)
-      if(data.success==1){
+      if(data['success']==1){
         this.showEdit=true
-        this.taskData.name=data.task.name
-        this.taskData.description=data.task.description
+        this.taskData.name=data['task'].name
+        this.taskData.description=data['task'].description
       }
     })
   }

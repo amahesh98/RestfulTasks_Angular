@@ -41,12 +41,13 @@
   <p>{{lastTask.description}}</p>
   <p>{{lastTask.createdAt}}</p>
 </fieldset>
-<fieldset class='viewTask' *ngIf="viewTaskClicked==true">
+<!-- <fieldset class='viewTask' *ngIf="viewTaskClicked==true">
   <legend>Viewed Task</legend>
     <h2>{{viewTask.name}}</h2>
     <h3>{{viewTask.description}}</h3>
     <h5>{{viewTask.createdAt}}</h5>
-</fieldset>
+</fieldset> -->
+<app-task *ngIf='viewTaskClicked==true' [selectedTask]='viewTask'></app-task>
 <fieldset class='viewTask' *ngIf='showEdit==true'>
   <legend>Edit Task</legend>
   <h2>Edit Task</h2>
