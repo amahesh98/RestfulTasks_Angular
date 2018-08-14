@@ -1,0 +1,74 @@
+button.all{
+    background:rgb(144, 144, 255);
+    color:white;
+    font-size:16pt;
+    display:inline-block;
+    width:fit-content;
+    margin:auto;
+    width:300px;
+    padding:10px;
+}
+div.holding_button{
+    display: block;
+    text-align: center;
+    /* border:1px solid red; */
+}
+h2{
+    text-align: center;
+}
+button.viewSingle{
+    font-size: 15pt;
+    background:rgb(65, 65, 231);
+    color:white;
+    border-radius:50px;
+    width:100px;
+    height:100px;
+    padding:20px;
+
+}
+fieldset.viewTask{
+    text-align: center;
+}
+form{
+    width:fit-content;
+    margin:auto;
+    margin-bottom:20px;
+}
+form input{
+    font-size:14pt;
+}
+form input.submit_button{
+    font-size:14pt;
+    background:maroon;
+    color:white;
+    border:1px solid gold;
+}
+form input.submit_button:hover{
+    background:white;
+    border:1px solid maroon;
+    color:maroon;
+}
+form label{
+    font-size:16pt;
+    font-weight:bold;
+    font-family:Arial, Helvetica, sans-serif;
+    margin-right:20px;
+}
+button.delete{
+    font-size: 15pt;
+    background:rgb(231, 65, 65);
+    color:white;
+    border-radius:50px;
+    width:100px;
+    height:100px;
+    padding:20px;
+}
+button.edit{
+    font-size: 15pt;
+    background:rgb(65, 231, 73);
+    color:white;
+    border-radius:50px;
+    width:100px;
+    height:100px;
+    padding:20px;
+}

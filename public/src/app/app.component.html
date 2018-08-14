@@ -1,0 +1,59 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<fieldset>
+  <legend>Important Button Area</legend>
+  <h2>Fetch All Tasks</h2>
+  <p>{{ newTask | json }}</p>
+  <form (submit)='createTask()'>
+    <label>Create Task:</label>
+    <input type='text' name='newTask.name' placeholder='task name' [(ngModel)]='newTask.name'/>
+    <input type='text' name='newTask.description' placeholder='description' [(ngModel)]='newTask.description'/>
+    <input type='submit' value='Create Task' class='submit_button'/>
+  </form>
+  <div class='holding_button'>
+    <button class='all' (click)="getAllTasks()">Show All</button>
+  </div>
+</fieldset>
+
+<fieldset class='viewTask'>
+  <legend>All Tasks</legend>
+  <table>
+    <thead>
+      <th>Name</th>
+      <!-- <th>Description</th> -->
+      <th>Created At</th>
+      <th>View</th>
+      <th>Delete</th>
+      <th>Edit</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of tasks">
+        <td>{{task.name}}</td>
+        <!-- <td>{{task.description}}</td> -->
+        <td>{{task.createdAt}}</td>
+        <td><button class='viewSingle' (click)="getSingleTask(task._id)">View Task</button></td>
+        <td><button class='delete' (click)='deleteTask(task._id)'>Delete</button></td>
+        <td><button class='edit' (click)='prepareForEdit(task._id)'>Edit Task</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <h1>Last Task</h1>
+  <p>{{lastTask.name}}</p>
+  <p>{{lastTask.description}}</p>
+  <p>{{lastTask.createdAt}}</p>
+</fieldset>
+<fieldset class='viewTask' *ngIf="viewTaskClicked==true">
+  <legend>Viewed Task</legend>
+    <h2>{{viewTask.name}}</h2>
+    <h3>{{viewTask.description}}</h3>
+    <h5>{{viewTask.createdAt}}</h5>
+</fieldset>
+<fieldset class='viewTask' *ngIf='showEdit==true'>
+  <legend>Edit Task</legend>
+  <h2>Edit Task</h2>
+  <form (submit)='editTask(taskData.task_id)'>
+    <input type='text' name='taskData.name' [(ngModel)]='taskData.name'>
+    <input type='text' name='taskData.description' [(ngModel)]='taskData.description'>
+    <input type='submit' value='Edit Task' class='submit_button'>
+  </form>
+</fieldset>
+
