@@ -9,7 +9,7 @@ export class TaskComponent implements OnInit {
   @Input() selectedTask:any;
 
   constructor() { }
-
+  
   ngOnInit() {
 
   }
